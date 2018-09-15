@@ -25,9 +25,20 @@
 		  location.href="login";
 	  }
 	});
+  
+  	function logout(){
+  		firebase.auth().signOut().then(function() {
+  		  location.href="login"
+  		}, function(error) {
+  		  // An error happened.
+  		});
+  	}
 </script>
 </head>
 <body>
-{{mail}}님 환영합니다.
+{{email}}님 환영합니다.
+<p>
+	<a href="javascript:logout();">로그아웃</a>
+</p>
 </body>
 </html>
