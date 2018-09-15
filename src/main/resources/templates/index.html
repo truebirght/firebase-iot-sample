@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello ! Firebase Sample</title>
+<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAg9MV2e4L0Y2b0k5wBEnpuDmF-0pitkdE",
+    authDomain: "pi-iot-7f7c3.firebaseapp.com",
+    databaseURL: "https://pi-iot-7f7c3.firebaseio.com",
+    projectId: "pi-iot-7f7c3",
+    storageBucket: "pi-iot-7f7c3.appspot.com",
+    messagingSenderId: "718949761260"
+  };
+  firebase.initializeApp(config);
+  
+  firebase.auth().onAuthStateChanged(function(user) {
+	  if (!user) {
+		  location.href="login";
+	  }
+	});
+</script>
+</head>
+<body>
+{{mail}}님 환영합니다.
+</body>
+</html>
